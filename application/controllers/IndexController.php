@@ -10,9 +10,19 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+        $this->_helper->layout()->disableLayout();
+        $form = new Application_Form_Register();
+        $this->view->form = $form;
+    }
+
+    public function siteAction()
+    {
+        $this->_helper->layout()->disableLayout();
+
     }
 
 
 }
+
+
 
