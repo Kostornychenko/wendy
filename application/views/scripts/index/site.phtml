@@ -1,4 +1,366 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Index</b> and script/action name <b>site</b></p>
+<?php
+require "lessphp/lessc.inc.php";
+$less = new lessc;
+$less->checkedCompile("less/style.less", "css/style.css");
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wendy.com.ua</title>
+    <meta charset="utf-8" http-equiv="content-type"/>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAwWyDlWcBoPFayDJmQK4Px0LQu3NsC9rw&sensor=TRUE"></script>
+    <script type="text/javascript" src="../js/jquery.lwtCountdown-0.9.5.js"></script>
+    <script type="text/javascript" src="../js/jssor.slider.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="../js/main.scripts.js"></script>
+</head>
+<body onload="initialize()">
+<div id="header">
+    <div class="wrap">
+        <ul>
+            <li id="home-link" class="active">Головна</li>
+            <li id="lovestory-link">Lovestory</li>
+            <li id="guest-link">Для гостей</li>
+            <li id="logo-link" class="logo"><div>wendy</div></li>
+            <li id="photo-link">галерея</li>
+            <li id="wish-link">Побажання</li>
+            <li id="contact-link">Контакти</li>
+        </ul>
+    </div>
 </div>
+<div id="home" style="background: url('../content/main.png') top center no-repeat;">
+    <div class="wrapper"></div>
+    <div class="wrap">
+        <div class="title">
+            <div class="name1">Оксана</div>
+            <div class="name2">Сергій</div>
+            <div class="date">вирішили одружитись <span>14 серпня 2014</span></div>
+        </div>
+        <div id="countdown">
+            <div class="dash weeks_dash">
+                <span class="dash_title">Тижнів</span>
+                <div class="mar"></div>
+                <div class="digit">2</div>
+                <div class="digit">8</div>
+                <div class="sep">:</div>
+            </div>
+            <div class="dash days_dash">
+                <span class="dash_title">Днів</span>
+                <div class="mar"></div>
+                <div class="digit"></div>
+                <div class="digit"></div>
+                <div class="sep">:</div>
+            </div>
+            <div class="dash hours_dash">
+                <span class="dash_title">Годин</span>
+                <div class="mar"></div>
+                <div class="digit">1</div>
+                <div class="digit">4</div>
+                <div class="sep">:</div>
+            </div>
+            <div class="dash minutes_dash">
+                <span class="dash_title">Хвилин</span>
+                <div class="mar"></div>
+                <div class="digit">5</div>
+                <div class="digit">2</div>
+                <div class="sep">:</div>
+            </div>
+            <div class="dash seconds_dash">
+                <span class="dash_title">Секунд</span>
+                <div class="mar"></div>
+                <div class="digit">2</div>
+                <div class="digit">6</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="lovestory">
+    <div class="wrap">
+        <div class="line">
+            <div class="text">
+                <h3>Оксана</h3>
+                <p>Журналіст за фахом, письмениця за натурою з романтичною душою. Корінна львів’янка, в 2009 закінчила  факультет журналістики. Працюю на видавництві журналу. Люблю ранковий запах кави, поїздки в гори, шум дощу і активний відпочинок.</p>
+            </div>
+            <div class="photo"></div>
+            <div class="text">
+                <h3>Сергій</h3>
+                <p>Народився на Львівщині, з дитинства мріяв стати художником, в 2009 закінчив академію мистецтв, по закінчені переїхав до Львова. Працюю дизайнером на приватній фірмі. Люблю живопис, активний відпочинок, зимою - сноуборд, а літом  велопрогулянки горами.</p>
+            </div>
+        </div>
+        <div class="line">
+            <h3>Наша історія</h3>
+            <p class="story">Наша історія почалась на буковелі під час фестивалю зимових видів спорту. Я каталась на борді і загубила на гірці телефон, засмучена я сиділа в кафе, як тут до мене  підбігає моя сестра і простягає мені свій телефон щоб я говорила, і на тому кінці слухавки я чую дуже ввічливого хлопця, що знайшов мій телефон, ми домовились про зустріч біля першого підйомника через пів години. Ми зустрілись і від тоді вже пройшло 3 щасливих роки як ми разом!Наша історія почалась на буковелі під час фестивалю зимових видів спорту. Я каталась на борді і загубила на гірці телефон, засмучена я сиділа в кафе, як тут до мене  підбігає моя сестра і простягає мені свій телефон щоб я говорила, і на тому кінці слухавки я чую дуже ввічливого хлопця, що знайшов мій телефон, ми домовились про зустріч біля першого підйомника через пів години. Ми зустрілись і від тоді вже пройшло 3 щасливих роки як ми разом!</p>
+        </div>
+    </div>
+    <div class="pattern witnesses">
+        <div class="wrap">
+            <h3>Свідки на весіллі</h3>
+            <div class="item">
+                <img src="../content/witness.png" />
+                <h4>Марта</h4>
+                <p>Двоюрідна сестра нареченої</p>
+            </div>
+            <div class="item">
+                <img src="../content/witness.png" />
+                <h4>Олег</h4>
+                <p>Друг дитинства нареченого, 15 років друзі</p>
+            </div>
+            <div class="item">
+                <img src="../content/witness.png" />
+                <h4>Юля</h4>
+                <p>Подруга нареченої з студеських часів</p>
+            </div>
+            <div class="item">
+                <img src="../content/witness.png" />
+                <h4>Андрій</h4>
+                <p>Рідний брат нареченого</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="guest">
+    <div class="wrap">
+        <div class="item item1">
+            <h3>Реєстрація шлюбу</h3>
+            <p>Запрошуємо Вас на свято, що влаштовується для Вас в нашу честь!
+                Час зустрічі: 18:30, п’ятниця, 10 червня 2011 року.Запрошуємо Вас на свято, що влаштовується для Вас в нашу честь!
+                Час зустрічі: 18:30, п’ятниця, 10 червня 2011 року.</p>
+        </div>
+        <div class="item item2">
+            <h3>Вінчання</h3>
+            <p>Запрошуємо Вас на свято, що влаштовується для Вас в нашу честь!
+                Час зустрічі: 18:30, п’ятниця, 10 червня 2011 року.Запрошуємо Вас на свято, що влаштовується для Вас в нашу честь!
+                Час зустрічі: 18:30, п’ятниця, 10 червня 2011 року.</p>
+        </div>
+        <div class="item item3">
+            <h3>Святкування</h3>
+            <p>Запрошуємо Вас на свято, що влаштовується для Вас в нашу честь!
+                Час зустрічі: 18:30, п’ятниця, 10 червня 2011 року.Запрошуємо Вас на свято, що влаштовується для Вас в нашу честь!
+                Час зустрічі: 18:30, п’ятниця, 10 червня 2011 року.</p>
+        </div>
+    </div>
+    <div class="map">
+        <div id="map"></div>
+        <div class="pattern-top"></div>
+        <div class="pattern-bottom"></div>
+        <input type="hidden" id="address1" value="Львів, ринок 7"/>
+        <input type="hidden" id="address2" value="Львів, вірменська 5"/>
+        <input type="hidden" id="address3" value="Львів, гоголя 6"/>
+    </div>
+</div>
+<div id="photo">
+    <div class="wrap">
+        <!-- Jssor Slider Begin -->
+        <!-- You can move inline styles to css file or css block. -->
+        <div id="slider1_container" style="position: relative; top: 0; left: 0; width: 960px;height: 610px;overflow: hidden;">
+            <!-- Loading Screen -->
+            <div u="loading" style="position: absolute; top: 0; left: 0;">
+                <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;top: 0; left: 0;width: 960px;height:100%;">
+                </div>
+                <div style="position: absolute; display: block; background: url('../images/loading.gif') no-repeat center center;top: 0; left: 0;width: 100%;height:100%;">
+                </div>
+            </div>
+            <!-- Slides Container -->
+            <div u="slides" style="cursor: move; position: absolute; left: 0; top: 0; width:960px;height: 510px; overflow: hidden;">
+                <div>
+                    <img u="image" src="http://www.perugia-farmhouse.it/uploads/images/Gallery/wedding_gallery/8-Outdoor-Wedding-Photos-Colorado.jpg"/>
+                    <img u="thumb" src="http://www.perugia-farmhouse.it/uploads/images/Gallery/wedding_gallery/8-Outdoor-Wedding-Photos-Colorado.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://www.plashafodhotel.com/wp-content/uploads/2012/03/%E7%AD%B9%E5%A4%873312.jpg" />
+                    <img u="thumb" src="http://www.plashafodhotel.com/wp-content/uploads/2012/03/%E7%AD%B9%E5%A4%873312.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://ashtonphotography.co.uk/wp-content/uploads/2013/12/Banner08a.jpg" />
+                    <img u="thumb" src="http://ashtonphotography.co.uk/wp-content/uploads/2013/12/Banner08a.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                    <img u="thumb" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://www.perugia-farmhouse.it/uploads/images/Gallery/wedding_gallery/8-Outdoor-Wedding-Photos-Colorado.jpg"/>
+                    <img u="thumb" src="http://www.perugia-farmhouse.it/uploads/images/Gallery/wedding_gallery/8-Outdoor-Wedding-Photos-Colorado.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://www.plashafodhotel.com/wp-content/uploads/2012/03/%E7%AD%B9%E5%A4%873312.jpg" />
+                    <img u="thumb" src="http://www.plashafodhotel.com/wp-content/uploads/2012/03/%E7%AD%B9%E5%A4%873312.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://ashtonphotography.co.uk/wp-content/uploads/2013/12/Banner08a.jpg" />
+                    <img u="thumb" src="http://ashtonphotography.co.uk/wp-content/uploads/2013/12/Banner08a.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                    <img u="thumb" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                    <img u="thumb" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                    <img u="thumb" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                    <img u="thumb" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                    <img u="thumb" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                    <img u="thumb" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                    <img u="thumb" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                    <img u="thumb" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                    <img u="thumb" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                    <img u="thumb" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                    <img u="thumb" src="http://www.downing-conferences-cambridge.co.uk/assets/images/gallery/weddings/main-page/downing-college-weddings-4.jpg" />
+                </div>
+            </div>
+            <!-- Arrow Left -->
+            <span u="arrowleft" class="jssora05l" style="width: 40px; height: 40px; top: 123px; left: 8px;"></span>
+            <!-- Arrow Right -->
+            <span u="arrowright" class="jssora05r" style="width: 40px; height: 40px; top: 123px; right: 8px"></span>
+            <!-- Arrow Navigator Skin End -->
+
+            <!-- ThumbnailNavigator Skin Begin -->
+            <div u="thumbnavigator" class="jssort07" style="position: absolute; width: 960px; height: 100px; left:0px; bottom: 0px;">
+                <div u="slides" style="cursor: move;">
+                    <div u="prototype" class="p" style="POSITION: absolute; WIDTH: 120px; height:90px; TOP: 0; LEFT: 0;">
+                        <ThumbnailTemplate class="i" style="position:absolute;"></ThumbnailTemplate>
+                        <div class="o"></div>
+                    </div>
+                </div>
+                <!-- Thumbnail Item Skin End -->
+            </div>
+            <!-- ThumbnailNavigator Skin End -->
+            <!-- Trigger -->
+            <script>
+                jssor_slider1_starter('slider1_container');
+            </script>
+        </div>
+        <!-- Jssor Slider End -->
+    </div>
+</div>
+</div>
+<div id="wish">
+    <div class="pattern">
+        <div class="wrap">
+            <div class="line">
+                <div class="text">
+                    <h3>Ми обожнюєм Вас</h3>
+                    <p>Ми будемо раді розділити з Вами радість цього незабутнього дня
+                        і запрошуємо Вас на свято, що влаштовується для Вас в нашу честь!
+                    </p>
+                </div>
+                <div class="photo"></div>
+                <div class="text">
+                    <h3>Побажання</h3>
+                    <p>Дорогі наші гості!
+                        Ми будем раді отрмати пару слів, побажань нашому майбутньому сімейному подружжю.</p>
+                    <div class="btn-wish">Залишити побажання</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="jcarousel">
+            <div class="wishes">
+                <div class="item">
+                    <div class="name">Мама і тато</div>
+                    <div class="date">12-21-2014</div>
+                    <div class="desc">Дорогі діточки!
+                        Ви для нас найдорожче в житті, ступаючи на стежку спільного життя, бажаємо Вам міцного, щирого кохання, міцних сімейних узів, благополуччя, та здорових діточок, щоб у Вашому домі, завжди дзвінких сміх, а невзгоди оминали Вас стороною.</div>
+                </div>
+                <div class="item">
+                    <div class="name">Мама і тато</div>
+                    <div class="date">12-21-2014</div>
+                    <div class="desc">Дорогі діточки!
+                        Ви для нас найдорожче в житті, ступаючи на стежку спільного життя, бажаємо Вам міцного, щирого кохання, міцних сімейних узів, благополуччя, та здорових діточок, щоб у Вашому домі, завжди дзвінких сміх, а невзгоди оминали Вас стороною.</div>
+                </div>
+                <div class="item">
+                    <div class="name">Мама і тато</div>
+                    <div class="date">12-21-2014</div>
+                    <div class="desc">Дорогі діточки!
+                        Ви для нас найдорожче в житті, ступаючи на стежку спільного життя, бажаємо Вам міцного, щирого кохання, міцних сімейних узів, благополуччя, та здорових діточок, щоб у Вашому домі, завжди дзвінких сміх, а невзгоди оминали Вас стороною.</div>
+                </div>
+                <div class="item">
+                    <div class="name">Мама і тато</div>
+                    <div class="date">12-21-2014</div>
+                    <div class="desc">Дорогі діточки!
+                        Ви для нас найдорожче в житті, ступаючи на стежку спільного життя, бажаємо Вам міцного, щирого кохання, міцних сімейних узів, благополуччя, та здорових діточок, щоб у Вашому домі, завжди дзвінких сміх, а невзгоди оминали Вас стороною.</div>
+                </div>
+                <div class="item">
+                    <div class="name">Мама і тато</div>
+                    <div class="date">12-21-2014</div>
+                    <div class="desc">Дорогі діточки!
+                        Ви для нас найдорожче в житті, ступаючи на стежку спільного життя, бажаємо Вам міцного, щирого кохання, міцних сімейних узів, благополуччя, та здорових діточок, щоб у Вашому домі, завжди дзвінких сміх, а невзгоди оминали Вас стороною.</div>
+                </div>
+            </div>
+        </div>
+        <div class="control">
+            <a class="jcarousel-prev" href="#">Prev</a>
+            <a class="jcarousel-next" href="#">Next</a>
+        </div>
+    </div>
+</div>
+<div id="contact">
+    <div class="pattern">
+        <div class="wrap">
+            <div class="line">
+                <div class="text">
+                    <h3>Оксана</h3>
+                    <p>
+                        <span class="phone">054 432 54 23</span>
+                        <span class="mail">fsdafs@fsdfoifdsf.com</span>
+                    </p>
+                    <div class="social">
+                        <a class="vk" href=""></a>
+                        <a class="fb" href=""></a>
+                        <a class="in" href=""></a>
+                    </div>
+                </div>
+                <div class="photo"></div>
+                <div class="text">
+                    <h3>Сергій</h3>
+                    <p>
+                        <span class="phone">054 432 54 23</span>
+                        <span class="mail">fsdafs@fsdfoifdsf.com</span>
+                    </p>
+                    <div class="social">
+                        <a class="vk" href=""></a>
+                        <a class="fb" href=""></a>
+                        <a class="in" href=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copy">
+                2014 &copy; wendy.com.ua
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
