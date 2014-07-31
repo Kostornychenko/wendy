@@ -10,15 +10,8 @@ class ControlController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+        echo "adminka";
     }
-
-    public function loginAction()
-    {
-        $form = new Application_Form_Login();
-        $this->view->form = $form;
-    }
-
 
 }
 
