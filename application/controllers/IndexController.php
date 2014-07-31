@@ -8,8 +8,7 @@ class IndexController extends Zend_Controller_Action
         /* Initialize action controller here */
     }
 
-    public function indexAction()
-    {
+    public function indexAction() {
         $this->_helper->layout()->disableLayout();
         $form = new Application_Form_Register();
         $this->view->form = $form;
@@ -23,17 +22,34 @@ class IndexController extends Zend_Controller_Action
 
                 $user = new Application_Model_DbTable_Users();
                 $user->addUser($sitename, md5($password), $email);
-                $this->_helper->redirector('index');
+                $site = new Application_Model_DbTable_Sites();
+                $site->addSite($sitename);
+                $data = array(
+                    'complete' => 1,
+                    'sitename' => $sitename
+                );
+                $this->view->data = $data;
             } else {
                 $form->populate($formData);
             }
         }
     }
 
-    public function siteAction()
-    {
+    public function siteAction() {
         $this->_helper->layout()->disableLayout();
 
+        $sitename = $this->_getParam('sitename');
+        $data = new Application_Model_DbTable_Sites();
+        $result = $data->getSite($sitename);
+        if ($result) {
+            if ($result['publish'] == 0) {
+                $this->view->nomoney = true;
+            } else {
+                $this->view->data = $result;
+            }
+        } else {
+            throw new Zend_Controller_Dispatcher_Exception('Сторінки немає', 404);
+        }
     }
 
 

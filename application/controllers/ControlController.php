@@ -10,7 +10,17 @@ class ControlController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        echo "adminka";
+        $user = Zend_Auth::getInstance()->getIdentity();
+        echo $user->sitename;
+        echo date("d-m-Y", $user->date)."<br>";
+        echo $user->password;
+        echo $user->email;
+    }
+
+    public function mainAction()
+    {
+
+
     }
 
 }

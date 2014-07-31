@@ -4,6 +4,18 @@
     <meta charset='utf-8' http-equiv="content-type">
 </head>
 <body>
-<?php echo $this->form; ?>
+<p>головна сторінка</p>
+<p>ціна 999грн</p>
+<p>замовити або дивитись демо</p>
+<?php
+$data = $this->data;
+if ($data['complete']) {
+    echo "Ви успішно зареєстрували сайт. адреса вашого сайту - wendy.com.ua/".$data['sitename']." зараз він не доступний. зверніться до нашого менеджера з питанням оплати";
+    echo "для наповнення його інформайцією використовуйте адмінку - wendy.com.ua/control ";
+} else {
+    echo $this->form;
+}
+echo $this->errMessage;
+?>
 </body>
 </html>

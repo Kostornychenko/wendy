@@ -1,8 +1,3 @@
-<?php
-require "lessphp/lessc.inc.php";
-$less = new lessc;
-$less->checkedCompile("less/style.less", "css/style.css");
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +13,18 @@ $less->checkedCompile("less/style.less", "css/style.css");
     <script type="text/javascript" src="../js/jquery.jcarousel.min.js"></script>
     <script type="text/javascript" src="../js/main.scripts.js"></script>
 </head>
+<?php
+require "lessphp/lessc.inc.php";
+$less = new lessc;
+$less->checkedCompile("less/style.less", "css/style.css");
+$data = $this->data;
+$nomoney = $this->nomoney;
+if ($nomoney) { ?>
+    <body>
+        <p>замовлено, але не оплалено</p>
+        <p>звяжіться з менеджером</p>
+    </body>
+<?php } else { ?>
 <body onload="initialize()">
 <div id="header">
     <div class="wrap">
@@ -38,7 +45,7 @@ $less->checkedCompile("less/style.less", "css/style.css");
         <div class="title">
             <div class="name1">Оксана</div>
             <div class="name2">Сергій</div>
-            <div class="date">вирішили одружитись <span>14 серпня 2014</span></div>
+            <div class="date">вирішили одружитись <span><?php echo date("d m Y", $data['main_date']); ?></span></div>
         </div>
         <div id="countdown">
             <div class="dash weeks_dash">
@@ -364,3 +371,4 @@ $less->checkedCompile("less/style.less", "css/style.css");
 </div>
 </body>
 </html>
+<?php } ?>

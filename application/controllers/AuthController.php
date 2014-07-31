@@ -36,7 +36,10 @@ class AuthController extends Zend_Controller_Action
                     $identity = $authAdapter->getResultRowObject();
                     $authStorage = $auth->getStorage();
                     $authStorage->write($identity);
-                    $this->_helper->redirector('index', 'index');
+                    $user = Zend_Auth::getInstance()->getIdentity();
+                    if ($user->role == 'user') {
+                        $this->_helper->redirector('index', 'control');
+                    }
                 } else {
                     $this->view->errMessage = 'Вы ввели неверное имя пользователя или неверный пароль';
                 }
