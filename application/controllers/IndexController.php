@@ -41,6 +41,7 @@ class IndexController extends Zend_Controller_Action
         $sitename = $this->_getParam('sitename');
         $data = new Application_Model_DbTable_Sites();
         $result = $data->getSite($sitename);
+        $user = Zend_Auth::getInstance()->getIdentity();
         if ($result) {
             if ($result['publish'] == 0) {
                 $this->view->nomoney = true;

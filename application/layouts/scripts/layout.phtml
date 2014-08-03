@@ -1,17 +1,28 @@
+<?php
+require "lessphp/lessc.inc.php";
+$less = new lessc;
+$less->checkedCompile("less/control.less", "css/control.css"); ?>
 <html>
     <head>
-        <title>index</title>
+        <title>Wendy | Панель управління</title>
         <meta charset='utf-8' http-equiv="content-type">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../css/control.css"/>
     </head>
 <body>
-<ul>
-    <li><a href="/control/main">головна</a></li>
-    <li><a href="/control/lovestory">lovestory</a></li>
-    <li><a href="/control/guest">для гостей</a></li>
-    <li><a href="/control/gallery">gallery</a></li>
-    <li><a href="/control/wish">побажання</a></li>
-    <li><a href="/control/contact">контакти</a></li>
+<ul class="nav nav-tabs">
+    <li><a href="/control/main">Головна</a></li>
+    <li><a href="/control/lovestory">Lovestory</a></li>
+    <li><a href="/control/guest">Для гостей</a></li>
+    <li><a href="/control/gallery">Галерея</a></li>
+    <li><a href="/control/wish">Побажання</a></li>
+    <li><a href="/control/contact">Контакти</a></li>
 </ul>
+<div class="container">
     <?php echo $this->layout()->content; ?>
+</div>
 </body>
 </html>

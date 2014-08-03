@@ -1,4 +1,24 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Control</b> and script/action name <b>index</b></p>
-</div>
+<?php $user = Zend_Auth::getInstance()->getIdentity(); ?>
+<table>
+    <thead>
+    <tr>
+        <th>Адреса сайту</th>
+        <th>Статус</th>
+        <th>Дата реєстрації</th>
+        <th>Дата закінчення</th>
+        <th>E-mail</th>
+    </tr>
+    </thead>
+    <tr>
+        <td><a href="<?php echo "http://".$_SERVER['SERVER_NAME']."/".$user->sitename; ?>" target="_blank"><?php echo $_SERVER['SERVER_NAME']."/".$user->sitename; ?></a></td>
+        <td><?php if($user->publish == 0) { ?>
+                Недоступний
+            <?php } else { ?>
+                Працює
+            <?php } ?>
+        </td>
+        <td><?php echo date("d-m-Y", $user->date); ?></td>
+        <td><?php echo date("d-m-Y", $user->date+31556926); ?></td>
+        <td><?php echo $user->email; ?></td>
+    </tr>
+</table>
