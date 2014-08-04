@@ -13,15 +13,20 @@ $less->checkedCompile("less/control.less", "css/control.css"); ?>
         <link rel="stylesheet" href="../css/control.css"/>
     </head>
 <body>
-<ul class="nav nav-tabs">
-    <li><a href="/control/main">Головна</a></li>
-    <li><a href="/control/lovestory">Lovestory</a></li>
-    <li><a href="/control/guest">Для гостей</a></li>
-    <li><a href="/control/gallery">Галерея</a></li>
-    <li><a href="/control/wish">Побажання</a></li>
-    <li><a href="/control/contact">Контакти</a></li>
-</ul>
 <div class="container">
+<?php if (Zend_Auth::getInstance()->hasIdentity()) { ?>
+    <ul class="nav nav-tabs">
+        <li><a href="/admin"><span class="glyphicon glyphicon-home"></span></a></li>
+        <li><a href="/admin/main">Головна</a></li>
+        <li><a href="/admin/lovestory">Lovestory</a></li>
+        <li><a href="/admin/guest">Для гостей</a></li>
+        <li><a href="/admin/gallery">Галерея</a></li>
+        <li><a href="/admin/wish">Побажання</a></li>
+        <li><a href="/admin/contact">Контакти</a></li>
+        <li style="float: right"><a href="/auth/logout">Выход</a></li>
+        <li style="float: right"><a href="/admin/help">Допомога</a></li>
+    </ul>
+<?php } ?>
     <?php echo $this->layout()->content; ?>
 </div>
 </body>

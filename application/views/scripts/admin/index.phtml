@@ -14,7 +14,7 @@ $data = $this->data;
     <tr>
         <td><a href="<?php echo "http://".$_SERVER['SERVER_NAME']."/".$user->sitename; ?>" target="_blank"><?php echo $_SERVER['SERVER_NAME']."/".$user->sitename; ?></a></td>
         <td><?php if($data['publish'] == 0) { ?>
-                Недоступний
+                <span style="color: #ff0000">Неактивний</span>
             <?php } else { ?>
                 Працює
             <?php } ?>
@@ -24,3 +24,4 @@ $data = $this->data;
         <td><?php echo $user->email; ?></td>
     </tr>
 </table>
+<p class="alert alert-danger">Щоб активувати сайт потрібно оплатити згідно рахунку. Після чого протягом 24 год. ваш сайт запрацює. тут можна продублювати реквізити</p>

@@ -9,7 +9,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         /*Resources*/
         $acl->addResource('index');
         $acl->addResource('auth');
-        $acl->addResource('control');
+        $acl->addResource('admin');
         $acl->addResource('error');
 
         /*Access*/
@@ -20,7 +20,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $acl->allow('guest', 'index', array('index', 'site'));
         $acl->allow('guest', 'auth', array('index', 'login', 'logout'));
         $acl->allow('guest', 'error');
-        $acl->allow('user', 'control', array('index', 'main'));
+        $acl->allow('user', 'admin', array('index', 'main'));
 
 
         $fc = Zend_Controller_Front::getInstance();
@@ -44,9 +44,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $router->addRoute('site', $site);
 
         $control = new Zend_Controller_Router_Route(
-            'control',
+            'admin',
             array(
-                'controller' => 'control',
+                'controller' => 'admin',
                 'action'     => 'index'
             )
         );

@@ -7,3 +7,17 @@ table td {
   text-align: center;
   padding: 5px;
 }
+.form {
+  width: 350px;
+  margin: 0 auto;
+}
+.form dt {
+  margin-top: 10px;
+}
+.form input[type="submit"] {
+  float: right;
+  margin-top: 10px;
+}
+.form #login-label {
+  display: none;
+}

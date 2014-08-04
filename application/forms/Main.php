@@ -1,40 +1,41 @@
 <?php
 
-class Application_Form_Login extends Zend_Form
+class Application_Form_Main extends Zend_Form
 {
     public function init()
     {
-        $this->setName('login');
+        $this->setName('main');
 
         $isEmptyMessage = 'Значение является обязательным и не может быть пустым';
 
-        $sitename = new Zend_Form_Element_Text('sitename');
-        $sitename->setLabel("Логін:")
+        $he_name = new Zend_Form_Element_Text('he_name');
+        $he_name->setLabel("Наречений:")
             ->setRequired(true)
             ->addFilter('StripTags')
             ->addFilter('StringTrim')
             ->setAttrib('class', 'form-control')
-            ->setAttrib('placeholder', 'sitename')
+            ->setAttrib('placeholder', "Ім'я")
             ->addValidator('NotEmpty', true,
                 array('messages' => array('isEmpty' => $isEmptyMessage))
             );
 
-        $password = new Zend_Form_Element_Password('password');
-        $password->setLabel('Пароль:')
+        $she_name = new Zend_Form_Element_Text('she_name');
+        $she_name->setLabel("Наречена:")
             ->setRequired(true)
             ->addFilter('StripTags')
             ->addFilter('StringTrim')
             ->setAttrib('class', 'form-control')
-            ->setAttrib('placeholder', 'password')
+            ->setAttrib('placeholder', "Ім'я")
             ->addValidator('NotEmpty', true,
                 array('messages' => array('isEmpty' => $isEmptyMessage))
             );
 
-        $submit = new Zend_Form_Element_Submit('login');
-        $submit->setLabel('Увійти')
+
+        $submit = new Zend_Form_Element_Submit('save');
+        $submit->setLabel('Зберегти')
             ->setAttrib('class', 'btn btn-primary');
 
-        $this->addElements(array($sitename, $password, $submit));
+        $this->addElements(array($he_name, $she_name, $submit));
         $this->setMethod('post');
     }
 }
