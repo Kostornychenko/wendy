@@ -1,4 +1,6 @@
-<?php $user = Zend_Auth::getInstance()->getIdentity(); ?>
+<?php $user = Zend_Auth::getInstance()->getIdentity();
+$data = $this->data;
+?>
 <table>
     <thead>
     <tr>
@@ -11,7 +13,7 @@
     </thead>
     <tr>
         <td><a href="<?php echo "http://".$_SERVER['SERVER_NAME']."/".$user->sitename; ?>" target="_blank"><?php echo $_SERVER['SERVER_NAME']."/".$user->sitename; ?></a></td>
-        <td><?php if($user->publish == 0) { ?>
+        <td><?php if($data['publish'] == 0) { ?>
                 Недоступний
             <?php } else { ?>
                 Працює

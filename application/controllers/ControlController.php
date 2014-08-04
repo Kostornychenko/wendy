@@ -10,7 +10,10 @@ class ControlController extends Zend_Controller_Action
 
     public function indexAction()
     {
-
+        $user = Zend_Auth::getInstance()->getIdentity();
+        $sitename = $user->sitename;
+        $site = new Application_Model_DbTable_Sites();
+        $this->view->data = $site->getSite($sitename);
 
     }
 
